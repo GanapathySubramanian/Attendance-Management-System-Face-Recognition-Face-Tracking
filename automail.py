@@ -4,11 +4,11 @@ import os
 import datetime
 
 # mail information
-yag = yagmail.SMTP("ganapathydaprojects@gmail.com", "Presidio")
+yag = yagmail.SMTP("ganapathyfras@gmail.com", "Frasproject")
 
 date = datetime.date.today().strftime("%B %d, %Y")
 
-staffEmail="ganapathy5subramanian@gmail.com"
+staffEmail="ganapathydaprojects@gmail.com"
 
 def sendEmail(mailTo,sub,content,attachment_file,msg):
     if(attachment_file==""):
@@ -93,6 +93,6 @@ os.chdir(path)
 files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
 newest = files[-1]
 fullreport_filename = newest 
-sendEmail("ganapathy5subramanian@gmail.com","Full Attendance Report for " + str(date),"Full Report for today's class has been attached here kindly check it out",fullreport_filename,"Full Report Email Sent to the staff")
+sendEmail(staffEmail,"Full Attendance Report for " + str(date),"Full Report for today's class has been attached here kindly check it out",fullreport_filename,"Full Report Email Sent to the staff")
 
 print("Email Sent")

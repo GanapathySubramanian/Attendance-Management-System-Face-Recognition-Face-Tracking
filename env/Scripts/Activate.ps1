@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\GanapathySubramanian\Desktop\Face-Recognition-Attendance-System-master\FRAS\env"
+$env:VIRTUAL_ENV="C:\Users\GanapathySubramanian\Desktop\Final Year Project\Attendance Management System\env"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

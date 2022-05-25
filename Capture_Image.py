@@ -40,7 +40,7 @@ def takeImages():
         detector = cv2.CascadeClassifier(harcascadePath)
         sampleNum = 0
 
-        while(True):
+        while(True): 
             ret, img = cam.read()
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             faces = detector.detectMultiScale(gray, 1.3, 5, minSize=(30,30),flags = cv2.CASCADE_SCALE_IMAGE)
@@ -54,9 +54,9 @@ def takeImages():
                 #display the frame
                 cv2.imshow('frame', img)
             #wait for 100 miliseconds
-            if cv2.waitKey(200) & 0xFF == ord('q'):
+            if cv2.waitKey(100) & 0xFF == ord('q'):
                 break
-            # break if the sample number is more than 100
+            # break if the sample number is more than 200
             elif sampleNum > 200:
                 break
         cam.release()
@@ -77,7 +77,6 @@ def takeImages():
             csvFile.close()
     else:
         if(is_number(Id)):
-            print("Enter Numeric ID")
+           print("Enter Alphabetical Name") 
         if(name.isalpha()):
-            print("Enter Alphabetical Name")
-
+            print("Enter Numeric ID")

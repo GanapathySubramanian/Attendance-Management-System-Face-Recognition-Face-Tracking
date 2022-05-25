@@ -12,9 +12,9 @@ def title_bar():
 
     # title of the program
 
-    print("\t**********************************************")
-    print("\t***** Face Recognition Attendance System *****")
-    print("\t**********************************************")
+    print("\t\t\t",73 * "*")
+    print("\t\t\t",10 * "*" ,"Attendance Management System Using Face Recognition", 10 * "*")
+    print("\t\t\t",73 * "*")
 
 
 # creating the user main menu function
@@ -22,13 +22,15 @@ def title_bar():
 def mainMenu():
     title_bar()
     print()
-    print(10 * "*", "WELCOME MENU", 10 * "*")
+    print( 10 * "*", "MAIN MENU", 10 * "*")
+    print()
     print("[1] Check Camera")
     print("[2] Capture Faces")
     print("[3] Train Images")
     print("[4] Recognize & Attendance")
-    print("[5] Auto Mail")
-    print("[6] Quit")
+    print("[5] Sent Mail")
+    print("[6] Eye Blink")
+    print("[7] Quit")
 
     while True:
         try:
@@ -53,6 +55,9 @@ def mainMenu():
                 break
                 mainMenu()
             elif choice == 6:
+                os.system("py EyeBlinkDetector.py")
+                break
+            elif choice == 7:
                 print("Thank You")
                 break
             else:
