@@ -29,8 +29,7 @@ def mainMenu():
     print("[3] Train Images")
     print("[4] Recognize & Attendance")
     print("[5] Sent Mail")
-    print("[6] Eye Blink")
-    print("[7] Quit")
+    print("[6] Quit")
 
     while True:
         try:
@@ -55,9 +54,6 @@ def mainMenu():
                 break
                 mainMenu()
             elif choice == 6:
-                os.system("py EyeBlinkDetector.py")
-                break
-            elif choice == 7:
                 print("Thank You")
                 break
             else:
