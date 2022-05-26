@@ -3,7 +3,7 @@ import check_camera
 import Capture_Image
 import Train_Image
 import Recognize
-
+import RecognizeEyeBlink
 
 # creating the title bar function
 
@@ -28,9 +28,10 @@ def mainMenu():
     print("[2] Capture Faces")
     print("[3] Train Images")
     print("[4] Recognize & Attendance")
-    print("[5] Sent Mail")
-    print("[6] Eye Blink")
-    print("[7] Quit")
+    print("[5] Eye Blink")
+    print("[6] Recognize Face + Eye Blink & Attendance")
+    print("[7] Generate Full Report & Sent Mail")
+    print("[8] Quit")
 
     while True:
         try:
@@ -49,15 +50,18 @@ def mainMenu():
                 RecognizeFaces()
                 break
             elif choice == 5:
+                os.system("py EyeBlinkDetector.py")
+                break
+            elif choice == 6:
+                RecognizeFacesDetectEyeBlink()
+                break
+            elif choice == 7:
                 os.system("py AbsenteesReportGeneration.py")
                 os.system("py FullReportGeneration.py")
                 os.system("py automail.py")
                 break
                 mainMenu()
-            elif choice == 6:
-                os.system("py EyeBlinkDetector.py")
-                break
-            elif choice == 7:
+            elif choice == 8:
                 print("Thank You")
                 break
             else:
@@ -103,6 +107,12 @@ def RecognizeFaces():
     key = input("Enter any key to return main menu")
     mainMenu()
 
+# --------------------------------------------------------------------
+# calling the recognize_attendance from recognize&eyeblink.py file
 
+def RecognizeFacesDetectEyeBlink():
+    RecognizeEyeBlink.recognize_attendence()
+    key = input("Enter any key to return main menu")
+    mainMenu()
 # ---------------main driver ------------------
 mainMenu()

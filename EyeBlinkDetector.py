@@ -29,6 +29,8 @@ while ret:
             eye_face_clr = image[y:y + h, x:x + w]
             # get the eyes
             eyes = eyes_cascade.detectMultiScale(eye_face, 1.3, 5, minSize=(50, 50))
+            for(ex,ey,ew,eh) in eyes:
+                cv2.rectangle(eye_face_clr,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
             if len(eyes) >= 2:
                 if first_read:
                     cv2.putText(image, "Eye's detected, press s to check blink", (70, 70), cv2.FONT_HERSHEY_SIMPLEX,
